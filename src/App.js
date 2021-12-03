@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import useSound from 'use-sound';
+import click from '../src/sounds/click.wav';
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [count, setCount] = useState(0); //Counter
+	const [clickSound] = useSound(click); //Click Sound
 
 	return (
 		<div>
@@ -11,6 +14,7 @@ function App() {
 					setCount(count + 1);
 					console.log(count);
 				}}
+				onMouseDown={clickSound}
 				className='App'>
 				<h1>Cookie</h1>
 			</button>
