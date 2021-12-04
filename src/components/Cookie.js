@@ -8,6 +8,23 @@ const Cookies = () => {
 	const [clickSound] = useSound(click); //Click Sound
 	const [clicks, setClicks] = useState(1); // the clicks counter
 
+	// Cursor upgrade
+	const handleCursor = () => {
+		if (count >= 15) {
+			setClicks(clicks + 1);
+			setCount(count - 15);
+			// console.log(clicks);
+		}
+	};
+
+	// Grandma upgrade
+	const handleGrandma = () => {
+		if (count >= 50) {
+			setClicks(clicks + 9);
+			setCount(count - 50);
+		}
+	};
+
 	return (
 		<div className='container'>
 			{/* Cookie Button */}
@@ -30,11 +47,19 @@ const Cookies = () => {
 			{/* Cursor Button */}
 			<button
 				onClick={() => {
-					setClicks(clicks + 2);
-					// console.log(clicks);
+					handleCursor();
 				}}
 				className='App'>
 				<p>Cursor</p>
+			</button>
+
+			{/* Grandma Button */}
+			<button
+				onClick={() => {
+					handleGrandma();
+				}}
+				className='App'>
+				<p>Grandma</p>
 			</button>
 
 			{/* Reset Button */}
