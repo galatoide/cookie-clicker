@@ -68,50 +68,74 @@ const Cookies = () => {
 
 			<h1>Bakery: {count}</h1>
 
-			{/* Cursor Button */}
-			<button
-				onClick={() => {
-					handleCursor();
-				}}
-				className='App'>
-				<p>Cursor</p>
-			</button>
+			<h2>Upgrades</h2>
 
-			{/* Grandma Button */}
-			<button
-				onClick={() => {
-					handleGrandma();
-				}}
-				className='App'>
-				<p>Grandma</p>
-			</button>
+			<div className='upgrades'>
+				<div className='upgrades-box'>
+					{/* Cursor Button */}
+					<button
+						onClick={() => {
+							handleCursor();
+						}}
+						className='App'>
+						<p>Cursor</p>
+					</button>
 
-			{/* Farm Button */}
-			<button
-				onClick={() => {
-					handleFarm();
-				}}
-				className='App'>
-				<p>Farm</p>
-			</button>
+					<p>Cost: 15</p>
+				</div>
 
-			{/* Mine Button */}
-			<button
-				onClick={() => {
-					handleMine();
-				}}
-				className='App'>
-				<p>Mine</p>
-			</button>
+				<div className='upgrades-box'>
+					{/* Grandma Button */}
+					<button
+						onClick={() => {
+							handleGrandma();
+						}}
+						className='App'>
+						<p>Grandma</p>
+					</button>
 
-			{/* Factory Button */}
-			<button
-				onClick={() => {
-					handleFactory();
-				}}
-				className='App'>
-				<p>Factory</p>
-			</button>
+					<p>Cost: 50</p>
+				</div>
+
+				<div className='upgrades-box'>
+					{/* Farm Button */}
+					<button
+						onClick={() => {
+							handleFarm();
+						}}
+						className='App'>
+						<p>Farm</p>
+					</button>
+
+					<p>Cost: 100</p>
+				</div>
+
+				<div className='upgrades-box'>
+					{/* Mine Button */}
+					<button
+						onClick={() => {
+							handleMine();
+						}}
+						className='App'>
+						<p>Mine</p>
+					</button>
+
+					<p>Cost: 250</p>
+				</div>
+
+				<div className='upgrades-box'>
+					{/* Factory Button */}
+					<button
+						onClick={() => {
+							handleFactory();
+						}}
+						className='App'>
+						<p>Factory</p>
+					</button>
+
+					<p>Cost: 2500</p>
+				</div>
+			</div>
 
 			{/* Reset Button */}
 			<button

@@ -10,4 +10,30 @@
 
 .reset{
   margin-top: 50px;
+  border-radius: 10px;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.upgrades{
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+
+  &-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-box > button{
+    width: 100px;
+    border-radius: 30px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
