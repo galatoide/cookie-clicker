@@ -20,8 +20,32 @@ const Cookies = () => {
 	// Grandma upgrade
 	const handleGrandma = () => {
 		if (count >= 50) {
-			setClicks(clicks + 9);
+			setClicks(clicks + 4);
 			setCount(count - 50);
+		}
+	};
+
+	// Farm upgrade
+	const handleFarm = () => {
+		if (count >= 100) {
+			setClicks(clicks + 9);
+			setCount(count - 100);
+		}
+	};
+
+	// Mine upgrade
+	const handleMine = () => {
+		if (count >= 250) {
+			setClicks(clicks + 19);
+			setCount(count - 250);
+		}
+	};
+
+	// Factory upgrade
+	const handleFactory = () => {
+		if (count >= 2500) {
+			setClicks(clicks + 25);
+			setCount(count - 2500);
 		}
 	};
 
@@ -60,6 +84,33 @@ const Cookies = () => {
 				}}
 				className='App'>
 				<p>Grandma</p>
+			</button>
+
+			{/* Farm Button */}
+			<button
+				onClick={() => {
+					handleFarm();
+				}}
+				className='App'>
+				<p>Farm</p>
+			</button>
+
+			{/* Mine Button */}
+			<button
+				onClick={() => {
+					handleMine();
+				}}
+				className='App'>
+				<p>Mine</p>
+			</button>
+
+			{/* Factory Button */}
+			<button
+				onClick={() => {
+					handleFactory();
+				}}
+				className='App'>
+				<p>Factory</p>
 			</button>
 
 			{/* Reset Button */}
