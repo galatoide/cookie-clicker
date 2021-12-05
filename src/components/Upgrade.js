@@ -18,21 +18,39 @@ const Upgrade = ({
 		}
 	};
 
-	return (
-		<div className='upgrades-box'>
-			{/* Cursor Button */}
-			<button
-				onClick={() => {
-					handleUpgrade();
-				}}
-				className='App'>
-				<p>Cursor</p>
-			</button>
+    return (
+			<div>
+				{count < upgrade ? (
+					<div className='upgrades-box'>
+						{/* Cursor Button */}
+						<button
+							onClick={() => {
+								handleUpgrade();
+							}}
+							className='App'>
+							<p>Cursor</p>
+						</button>
 
-			<p>Cost: {cost}</p>
-			<p>Clicks added: {clicksAdded}</p>
-		</div>
-	);
+						<p>Cost: {cost}</p>
+						<p>Clicks added: {clicksAdded}</p>
+					</div>
+				) : (
+					<div className='upgrades-box on'>
+						{/* Cursor Button */}
+						<button
+							onClick={() => {
+								handleUpgrade();
+							}}
+							className='App'>
+							<p>Cursor</p>
+						</button>
+
+						<p>Cost: {cost}</p>
+						<p>Clicks added: {clicksAdded}</p>
+					</div>
+				)}
+			</div>
+		);
 };
 
 export default Upgrade;

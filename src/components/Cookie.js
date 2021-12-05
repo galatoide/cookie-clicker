@@ -91,7 +91,7 @@ const Cookies = () => {
 			<button
 				onClick={() => {
 					setCount(0);
-					setClicks(0);
+					setClicks(1);
 					// console.log(count);
 				}}
 				className='reset'>
