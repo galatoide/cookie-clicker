@@ -2,52 +2,12 @@ import { useState } from 'react';
 import useSound from 'use-sound';
 import click from '../sounds/click.wav';
 import cookie from '../images/cookie.png';
+import Upgrade from './Upgrade';
 
 const Cookies = () => {
 	const [count, setCount] = useState(0); //Counter
 	const [clickSound] = useSound(click); //Click Sound
 	const [clicks, setClicks] = useState(1); // the clicks counter
-
-	// Cursor upgrade
-	const handleCursor = () => {
-		if (count >= 15) {
-			setClicks(clicks + 1);
-			setCount(count - 15);
-			// console.log(clicks);
-		}
-	};
-
-	// Grandma upgrade
-	const handleGrandma = () => {
-		if (count >= 50) {
-			setClicks(clicks + 4);
-			setCount(count - 50);
-		}
-	};
-
-	// Farm upgrade
-	const handleFarm = () => {
-		if (count >= 100) {
-			setClicks(clicks + 9);
-			setCount(count - 100);
-		}
-	};
-
-	// Mine upgrade
-	const handleMine = () => {
-		if (count >= 250) {
-			setClicks(clicks + 19);
-			setCount(count - 250);
-		}
-	};
-
-	// Factory upgrade
-	const handleFactory = () => {
-		if (count >= 2500) {
-			setClicks(clicks + 25);
-			setCount(count - 2500);
-		}
-	};
 
 	return (
 		<div className='container'>
@@ -71,70 +31,60 @@ const Cookies = () => {
 			<h2>Upgrades</h2>
 
 			<div className='upgrades'>
-				<div className='upgrades-box'>
-					{/* Cursor Button */}
-					<button
-						onClick={() => {
-							handleCursor();
-						}}
-						className='App'>
-						<p>Cursor</p>
-					</button>
+				{/* Cursor Button */}
+				<Upgrade
+					count={count}
+					clicks={clicks}
+					setClicks={setClicks}
+					setCount={setCount}
+					upgrade='15'
+					cost='15'
+					clicksAdded='2'
+				/>
 
-					<p>Cost: 15</p>
-				</div>
+				{/* Grandma Button */}
+				<Upgrade
+					count={count}
+					clicks={clicks}
+					setClicks={setClicks}
+					setCount={setCount}
+					upgrade='50'
+					cost='50'
+					clicksAdded='5'
+				/>
 
-				<div className='upgrades-box'>
-					{/* Grandma Button */}
-					<button
-						onClick={() => {
-							handleGrandma();
-						}}
-						className='App'>
-						<p>Grandma</p>
-					</button>
+				{/* Farm Button */}
+				<Upgrade
+					count={count}
+					clicks={clicks}
+					setClicks={setClicks}
+					setCount={setCount}
+					upgrade='100'
+					cost='100'
+					clicksAdded='10'
+				/>
 
-					<p>Cost: 50</p>
-				</div>
+				{/* Mine Button */}
+				<Upgrade
+					count={count}
+					clicks={clicks}
+					setClicks={setClicks}
+					setCount={setCount}
+					upgrade='250'
+					cost='250'
+					clicksAdded='20'
+				/>
 
-				<div className='upgrades-box'>
-					{/* Farm Button */}
-					<button
-						onClick={() => {
-							handleFarm();
-						}}
-						className='App'>
-						<p>Farm</p>
-					</button>
-
-					<p>Cost: 100</p>
-				</div>
-
-				<div className='upgrades-box'>
-					{/* Mine Button */}
-					<button
-						onClick={() => {
-							handleMine();
-						}}
-						className='App'>
-						<p>Mine</p>
-					</button>
-
-					<p>Cost: 250</p>
-				</div>
-
-				<div className='upgrades-box'>
-					{/* Factory Button */}
-					<button
-						onClick={() => {
-							handleFactory();
-						}}
-						className='App'>
-						<p>Factory</p>
-					</button>
-
-					<p>Cost: 2500</p>
-				</div>
+				{/* Factory Button */}
+				<Upgrade
+					count={count}
+					clicks={clicks}
+					setClicks={setClicks}
+					setCount={setCount}
+					upgrade='2500'
+					cost='2500'
+					clicksAdded='30'
+				/>
 			</div>
 
 			{/* Reset Button */}
@@ -142,7 +92,7 @@ const Cookies = () => {
 				onClick={() => {
 					setCount(0);
 					setClicks(0);
-					console.log(count);
+					// console.log(count);
 				}}
 				className='reset'>
 				<p>Reset</p>
